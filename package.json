@@ -1,0 +1,28 @@
+{
+  "name": "yoyo-bootstrap",
+  "version": "0.0.1",
+  "description": "A yoyo implementation of the bootstrap visual framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/silentcicero/yoyo-bootstrap.git"
+  },
+  "keywords": [
+    "yoyo",
+    "bootstrap",
+    "css"
+  ],
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silentcicero/yoyo-bootstrap/issues"
+  },
+  "homepage": "https://github.com/silentcicero/yoyo-bootstrap#readme",
+  "dependencies": {
+    "bootstrap-css": "^3.0.0",
+    "yo-yo": "^1.1.1"
+  }
+}
