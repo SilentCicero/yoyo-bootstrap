@@ -7,7 +7,8 @@ const FormGroup = function(opts, _yield) {
 
   return yo`
     <div id="${(opts.controlId && opts.controlId || '')}" class="${(opts.bsClass && opts.bsClass || 'form-group')
-                + (opts.bsSize && "form-group-" + opts.bsSize + " " || '')}">
+                + (opts.bsSize && "form-group-" + opts.bsSize + " " || '')
+                + (opts.validationState && "has-" + opts.validationState + " " || '')}">
       ${_yield}
     </div>
     `
