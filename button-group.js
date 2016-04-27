@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/button-groups.css")
 
 const ButtonGroup = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <div role=${(opts.role && opts.role || 'group')}
@@ -17,4 +17,4 @@ const ButtonGroup = function(opts, _yield) {
     `
 }
 
-module.exports = ButtonGroup;
+module.exports = ButtonGroup

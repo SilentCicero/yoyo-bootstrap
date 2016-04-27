@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/grid.css")
 
 const Col = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+    opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <div class="${(opts.bsClass && opts.bsClass || 'col')
@@ -38,4 +38,4 @@ const Col = function(opts, _yield) {
     `
 }
 
-module.exports = Col;
+module.exports = Col

@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/forms.css")
 
 const ControlLabel = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <label class="${(opts.bsClass && opts.bsClass + " " || 'control-label ')}">
@@ -12,4 +12,4 @@ const ControlLabel = function(opts, _yield) {
     `
 }
 
-module.exports = ControlLabel;
+module.exports = ControlLabel

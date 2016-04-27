@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/progress-bars.css")
 
 const ProgressBar = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   const elClass = (opts.bsClass && opts.bsClass + " " || 'progress-bar ')
                + (opts.active && "active" + " " || ' ')
@@ -24,4 +24,4 @@ const ProgressBar = function(opts, _yield) {
     `
 }
 
-module.exports = ProgressBar;
+module.exports = ProgressBar

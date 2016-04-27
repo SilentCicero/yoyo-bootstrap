@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/grid.css")
 
 const Radio = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   var content = _yield && yo`<label>${_yield}<label>` || "";
   var class = (opts.bsClass && opts.bsClass + " "
@@ -17,4 +17,4 @@ const Radio = function(opts, _yield) {
                      || yo`<div class="${class}">${checkbox} ${content}</div>`
 }
 
-module.exports = Radio;
+module.exports = Radio

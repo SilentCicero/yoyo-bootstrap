@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/responsive-utilities.css")
 
 const Clearfix = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+    opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <div class="${(opts.visibleLgBlock && "visible-lg-block " || '')
@@ -15,4 +15,4 @@ const Clearfix = function(opts, _yield) {
     `
 }
 
-module.exports = Clearfix;
+module.exports = Clearfix

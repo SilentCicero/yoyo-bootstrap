@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/buttons.css")
 
 const Button = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   var elClass = (opts.bsClass && opts.bsClass + " " || 'btn')
       + (opts.active && 'active' + " " || '')
@@ -29,4 +29,4 @@ const Button = function(opts, _yield) {
   }
 }
 
-module.exports = Button;
+module.exports = Button

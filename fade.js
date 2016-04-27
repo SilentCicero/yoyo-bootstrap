@@ -1,12 +1,12 @@
-const yo = require("yo-yo");
-require("../../../node_modules/bootstrap-css/lib/component-animations.css")
+const yo = require("yo-yo")
+require("./node_modules/bootstrap-css/lib/component-animations.css")
 
 const Fade = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
-  var enter = (opts.onEnter && opts.in) && opts.onEnter();
-  var exit = (opts.onExit && !opts.in) && opts.onExit();
+  var enter = (opts.onEnter && opts.in) && opts.onEnter()
+  var exit = (opts.onExit && !opts.in) && opts.onExit()
 
   let el = yo`
     <div class=${(opts.bsClass && opts.bsClass + " " || 'fade ')
@@ -17,7 +17,7 @@ const Fade = function(opts, _yield) {
 
   console.log(el)
 
-  return el;
+  return el
 }
 
-module.exports = Fade;
+module.exports = Fade

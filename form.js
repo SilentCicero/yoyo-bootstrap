@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/forms.css")
 
 const Form = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <form id="${opts.id && opts.id || ""}" class="${(opts.bsClass && opts.bsClass + " "
@@ -15,4 +15,4 @@ const Form = function(opts, _yield) {
     `
 }
 
-module.exports = Form;
+module.exports = Form

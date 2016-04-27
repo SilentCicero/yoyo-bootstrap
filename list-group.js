@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/list-group.css")
 
 const ListGroup = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   var elClass = opts.bsClass && opts.bsClass || 'list-group',
       id = opts.id && opts.id || '';
@@ -22,4 +22,4 @@ const ListGroup = function(opts, _yield) {
       `
 }
 
-module.exports = ListGroup;
+module.exports = ListGroup

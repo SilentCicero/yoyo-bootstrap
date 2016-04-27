@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/utilities.css")
 
 const Badge = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <span class="${(opts.bsClass && opts.bsClass + " " || 'badge ')
@@ -13,4 +13,4 @@ const Badge = function(opts, _yield) {
     `
 }
 
-module.exports = Badge;
+module.exports = Badge

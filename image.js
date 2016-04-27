@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/scaffolding.css")
 
 const Image = function(opts) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <div class="${(opts.bsClass && opts.bsClass + " " || ' ')
@@ -14,4 +14,4 @@ const Image = function(opts) {
     `
 }
 
-module.exports = Image;
+module.exports = Image

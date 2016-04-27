@@ -23,6 +23,8 @@
   "homepage": "https://github.com/silentcicero/yoyo-bootstrap#readme",
   "dependencies": {
     "bootstrap-css": "^3.0.0",
+    "throw-down": "^0.1.2",
+    "dom101": "git://github.com/SilentCicero/dom101.git",
     "yo-yo": "^1.1.1"
   }
 }

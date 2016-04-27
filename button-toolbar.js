@@ -1,9 +1,9 @@
-const yo = require("yo-yo");
+const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/button-groups.css")
 
 const ButtonToolbar = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts;
-  _yield = typeof _yield === "undefined" && "" || _yield;
+  opts = opts || {}
+  _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
     <div class="${(opts.bsClass && opts.bsClass || 'btn-toolbar')}">
@@ -12,4 +12,4 @@ const ButtonToolbar = function(opts, _yield) {
     `
 }
 
-module.exports = ButtonToolbar;
+module.exports = ButtonToolbar
