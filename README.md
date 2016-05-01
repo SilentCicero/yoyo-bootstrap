@@ -36,6 +36,7 @@ document.body.appendChild(Button({bsStyle: "primary", bsSize: "medium"}, "Some I
 or a Grid/Column/Row:
 
 ```js
+const Common = require("yoyo-bootstrap/common")
 const Grid = require("yoyo-boostrap/grid")
 const Row = require("yoyo-bootstrap/row")
 const Col = require("yoyo-bootstrap/col")
@@ -57,6 +58,7 @@ document.body.appendChild(Grid({},
 or a form:
 
 ```js
+const Common = require("yoyo-bootstrap/common")
 const Form = require("yoyo-bootstrap/form")
 const FormControl = require("yoyo-bootstrap/form-control")
 const Option = require("yoyo-bootstrap/option")
