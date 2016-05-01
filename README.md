@@ -1,6 +1,6 @@
 # yoyo-bootstrap
 
-React bootstrap but for the actual DOM (built with yo-yo)
+Bootstrap components for the actual DOM (built with yo-yo)
 
 ```
 npm install --save yoyo-boostrap
@@ -12,7 +12,7 @@ npm install --save yoyo-boostrap
  - completely modularized and compartmentalized (i.e. `require("yoyo-bootstrap/button")`)
  - CSS baked into each module (only include the CSS you need)
  - follows the React Bootstrap documentation
- - almost 95% coverage of all bootstrap components
+ - almost 90% coverage of all bootstrap components
  - easily extensible
  - built with <a href="https://github.com/maxogden/yo-yo">yo-yo</a>, the lightest UI framework
  - minimal dependencies (average `4.1kb` minified + g-zipped, usually just `yo-yo`)
@@ -21,7 +21,7 @@ npm install --save yoyo-boostrap
 
 ## About
 
-React Bootstrap but for the actual DOM. Include only the Bootstrap components and CSS you need in pure JS.
+Basically React Bootstrap but for the actual DOM. Include only the Bootstrap components and CSS you need in pure JS with proper argument nesting. All modules are actual DOM elements that can be directly appended and used in the DOM. All base level scaffolding and common CSS is included in helper modules (e.g. `yoyo-bootstrap/common`).
 
 ## Usage
 
@@ -71,13 +71,11 @@ document.body.appendChild(Form({},
 )
 ```
 
-Notice, all component properties are notated the same as React Bootstrap.
+Notice, all component properties are notated the same as React Bootstrap. Use the React Bootstrap manual to walk through the various available properties for each component.
 
-Use the React Bootstrap manual to walk through the various available properties for each component.
+Manual available here: https://react-bootstrap.github.io/components.html
 
-Guide available here: https://react-bootstrap.github.io/components.html
-
-Note, some properties are not available, if a property isn't working, check the actual component in `yoyo-bootstrap` to see if your desired property is available for that component.
+Note, some properties are not available, if a component property isn't working, check the actual component in `yoyo-bootstrap` to see if your desired property is available.
 
 ## Available Components
 
@@ -125,7 +123,7 @@ const Children = require("yoyo-bootstrap/children")
 const Option = require("yoyo-bootstrap/option")
 ```
 
-## bootstrap-css - css modularization with requireCSS
+## bootstrap-css - modularized bootstrap css using requireCSS
 
 `yoyo-bootstrap` uses `require(css)` statements `bootstrap-css` package to break up the various CSS modules. This means your development environment must support importing CSS via require statements in your `node_modules`.
 
