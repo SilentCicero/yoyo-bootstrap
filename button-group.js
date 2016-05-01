@@ -8,10 +8,10 @@ const ButtonGroup = function(props) {
   return yo`
     <div role=${(props.role && props.role || 'group')}
           aria-label=${props.ariaLabel && props.ariaLabel || ''}
-          class="${(props.bsClass && props.bsClass + " " || 'btn-group')
+          class="${(props.bsClass && props.bsClass + " " || 'btn-group ')
                 + (props.bsSize && "btn-group-" + props.bsSize + " " || '')
-                + (props.justified && "btn-group-justified" + " " || '')
-                + (props.vertical && "btn-group-vertical" + " " || '')}">
+                + (props.justified && "btn-group-justified " || '')
+                + (props.vertical && "btn-group-vertical " || '')}">
       ${Children(arguments)}
     </div>
     `

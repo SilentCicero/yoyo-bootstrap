@@ -5,7 +5,7 @@ require("./css/list-group.css")
 const ListGroup = function(props) {
   props = props || {}
 
-  var elClass = props.bsClass && props.bsClass || 'list-group',
+  var elClass = props.bsClass && props.bsClass || 'list-group ',
       id = props.id && props.id || '';
 
   if(props.componentClass == "ul")

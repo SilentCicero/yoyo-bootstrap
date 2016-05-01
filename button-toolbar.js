@@ -6,7 +6,7 @@ const ButtonToolbar = function(props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass || 'btn-toolbar')}">
+    <div class="${(props.bsClass && props.bsClass || 'btn-toolbar ')}">
       ${Children(arguments)}
     </div>
     `

@@ -5,13 +5,13 @@ require("./css/buttons.css")
 const Button = function(props) {
   props = props || {}
 
-  var elClass = (props.bsClass && props.bsClass + " " || 'btn')
+  var elClass = (props.bsClass && props.bsClass + " " || 'btn ')
       + (props.active && 'active' + " " || '')
       + (props.bsSize && 'btn-' + props.bsSize + " " || '')
-      + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default');
+      + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default ');
   var onClick = props.onClick && props.onClick || "";
   var elType = props.type && props.type || "button";
-  var disabled = props.disabled && "disabled " || '';
+  var disabled = props.disabled && " disabled " || '';
   var target = props.target && props.target || '';
 
   if(props.href) {

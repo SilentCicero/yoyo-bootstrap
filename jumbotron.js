@@ -6,7 +6,7 @@ const Jumbotron = function(props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass || 'jumbotron')}">
+    <div class="${(props.bsClass && props.bsClass || 'jumbotron ')}">
       ${Children(arguments)}
     </div>
     `

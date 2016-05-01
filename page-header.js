@@ -6,7 +6,7 @@ const PageHeader = function(props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass || 'page-header')}">
+    <div class="${(props.bsClass && props.bsClass || 'page-header ')}">
       ${Children(arguments)}
     </div>
     `
