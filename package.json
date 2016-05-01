@@ -1,7 +1,7 @@
 {
   "name": "yoyo-bootstrap",
-  "version": "0.0.4",
-  "description": "A yoyo implementation of the bootstrap visual framework",
+  "version": "0.0.5",
+  "description": "Bootstrap components for the actual DOM (built with yoyo)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

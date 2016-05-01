@@ -3,19 +3,19 @@ const Children = require("./children")
 require("./css/grid.css")
 
 const Col = function(props) {
-    props = props || {}
+  props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass || 'col')
+    <div class="${(props.bsClass && props.bsClass || 'col ')
                 + (props.xs && "col-xs-" + props.xs + ' ' || '')
                 + (props.sm && "col-sm-" + props.sm + ' ' || '')
                 + (props.md && "col-md-" + props.md + ' ' || '')
                 + (props.lg && "col-lg-" + props.lg + ' ' || '')
 
-                + (props.xsHidden && "hidden-xs" + ' ' || '')
-                + (props.smHidden && "hidden-sm" + ' ' || '')
-                + (props.mdHidden && "hidden-md" + ' ' || '')
-                + (props.lgHidden && "hidden-lg" + ' ' || '')
+                + (props.xsHidden && "hidden-xs " || '')
+                + (props.smHidden && "hidden-sm " || '')
+                + (props.mdHidden && "hidden-md " || '')
+                + (props.lgHidden && "hidden-lg " || '')
 
                 + (props.xsOffset && "col-xs-offset-" + props.xsOffset + ' ' || '')
                 + (props.smOffset && "col-sm-offset-" + props.smOffset + ' ' || '')
