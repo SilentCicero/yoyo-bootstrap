@@ -1,13 +1,13 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/type.css")
 
-const PageHeader = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const PageHeader = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass || 'page-header')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass || 'page-header')}">
+      ${Children(arguments)}
     </div>
     `
 }

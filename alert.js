@@ -1,17 +1,17 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/labels.css")
 
-const Alert = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Alert = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'alert ')
-                 + (opts.bsStyle && "alert-" + opts.bsStyle + " " || 'alert-info ')}">
-      <button type="button" onclick=${opts.onDismiss && opts.onDismiss} class="close" aria-hidden="true" tabindex="-1">
+    <div class="${(props.bsClass && props.bsClass + " " || 'alert ')
+                 + (props.bsStyle && "alert-" + props.bsStyle + " " || 'alert-info ')}">
+      <button type="button" onclick=${props.onDismiss && props.onDismiss} class="close" aria-hidden="true" tabindex="-1">
         <span>×</span>
       </button>
-      ${_yield}
+      ${Children(arguments)}
     </div>
     `
 }

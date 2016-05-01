@@ -1,14 +1,14 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/wells.css")
 
-const Well = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Well = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'well ')
-                + (opts.bsSize && "well-" + opts.bsSize + " " || '')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'well ')
+                + (props.bsSize && "well-" + props.bsSize + " " || '')}">
+      ${Children(arguments)}
     </div>
     `
 }

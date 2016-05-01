@@ -35,6 +35,8 @@ const Row = require("./row")
 const Table = require("./table")
 const Thumbnail = require("./thumbnail")
 const Well = require("./well")
+const Children = require("./children")
+const Option = require("./Option")
 
 module.exports = {
   "Alert": Alert,
@@ -73,5 +75,7 @@ module.exports = {
   "Row": Row,
   "Table": Table,
   "Thumbnail": Thumbnail,
-  "Well": Well
+  "Well": Well,
+  "Children": Children,
+  "Option": Option
 }

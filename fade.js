@@ -1,21 +1,19 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/component-animations.css")
 
-const Fade = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Fade = function(props) {
+  props = props || {}
 
-  var enter = (opts.onEnter && opts.in) && opts.onEnter()
-  var exit = (opts.onExit && !opts.in) && opts.onExit()
+  var enter = (props.onEnter && props.in) && props.onEnter()
+  var exit = (props.onExit && !props.in) && props.onExit()
 
   let el = yo`
-    <div class=${(opts.bsClass && opts.bsClass + " " || 'fade ')
-                + (opts.in && "in " || ' ')}>
-      ${_yield}
+    <div class=${(props.bsClass && props.bsClass + " " || 'fade ')
+                + (props.in && "in " || ' ')}>
+      ${Children(arguments)}
     </div>
     `
-
-  console.log(el)
 
   return el
 }

@@ -1,17 +1,17 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
 require("./node_modules/bootstrap-css/lib/dropdowns.css")
 
-const DropdownButton = function(opts, _yield) {
-  _yield = typeof _yield !== "undefined" && _yield || ""
-  opts = opts || {}
+const DropdownButton = function(props) {
+  props = props || {}
   var el, open
 
   function toggle () {
     open = !open
     update(el, render(_yield))
-    opts.onToggle && opts.onToggle(el)
+    props.onToggle && props.onToggle(el)
   }
 
   function track (node) {
@@ -27,17 +27,17 @@ const DropdownButton = function(opts, _yield) {
 
   function render(_yield) {
     return yo`
-      <div class="${(opts.bsClass && opts.bsClass + " " || 'dropdown btn-group ')
+      <div class="${(props.bsClass && props.bsClass + " " || 'dropdown btn-group ')
                   + (open && "open " || "")
-                  + (opts.bsSize && "btn-group-" + opts.bsSize || "")}">
+                  + (props.bsSize && "btn-group-" + props.bsSize || "")}">
         <button onclick=${toggle} class=${"btn dropdown-toggle "
-                      + (opts.bsSize && "btn-" + opts.bsSize + " " || "")
-                      + (opts.bsStyle && "btn-" + opts.bsStyle + " " || "")} role="button" type="button" />
-          ${opts.title || ""}
-          ${opts.noCaret && "" || yo`<span class="caret"></span>`}
+                      + (props.bsSize && "btn-" + props.bsSize + " " || "")
+                      + (props.bsStyle && "btn-" + props.bsStyle + " " || "")} role="button" type="button" />
+          ${props.title || ""}
+          ${props.noCaret && "" || yo`<span class="caret"></span>`}
         </button>
         <ul class="dropdown-menu">
-          ${(typeof _yield === "array" && _yield.map(function(item){return item;}) || _yield)}
+          ${(typeof _yield === "array" && _yield.map(function(item){return item;}) || Children(arguments))}
         </ul>
       </div>
       `

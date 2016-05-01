@@ -1,18 +1,18 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/button-groups.css")
 
-const ButtonGroup = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const ButtonGroup = function(props) {
+  props = props || {}
 
   return yo`
-    <div role=${(opts.role && opts.role || 'group')}
-          aria-label=${opts.ariaLabel && opts.ariaLabel || ''}
-          class="${(opts.bsClass && opts.bsClass + " " || 'btn-group')
-                + (opts.bsSize && "btn-group-" + opts.bsSize + " " || '')
-                + (opts.justified && "btn-group-justified" + " " || '')
-                + (opts.vertical && "btn-group-vertical" + " " || '')}">
-      ${_yield}
+    <div role=${(props.role && props.role || 'group')}
+          aria-label=${props.ariaLabel && props.ariaLabel || ''}
+          class="${(props.bsClass && props.bsClass + " " || 'btn-group')
+                + (props.bsSize && "btn-group-" + props.bsSize + " " || '')
+                + (props.justified && "btn-group-justified" + " " || '')
+                + (props.vertical && "btn-group-vertical" + " " || '')}">
+      ${Children(arguments)}
     </div>
     `
 }

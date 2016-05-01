@@ -1,14 +1,14 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/utilities.css")
 
-const Badge = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Badge = function(props) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'badge ')
-                 + (opts.pullRight && "pull-right " || " ")}">
-      ${_yield}
+    <span class="${(props.bsClass && props.bsClass + " " || 'badge ')
+                 + (props.pullRight && "pull-right " || " ")}">
+      ${Children(arguments)}
     </span>
     `
 }

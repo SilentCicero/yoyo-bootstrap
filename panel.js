@@ -1,20 +1,20 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/panels.css")
 
-const Panel = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Panel = function(props) {
+  props = props || {}
 
-  var header = opts.header && yo`<div class="panel-heading">${opts.header}</div>` || '';
-  var footer = opts.footer && yo`<div class="panel-footer">${opts.footer}</div>` || '';
-  var panelRole = opts.panelRole && opts.panelRole || '';
+  var header = props.header && yo`<div class="panel-heading">${props.header}</div>` || '';
+  var footer = props.footer && yo`<div class="panel-footer">${props.footer}</div>` || '';
+  var panelRole = props.panelRole && props.panelRole || '';
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'panel ')
-                + (opts.bsStyle && "panel-" + opts.bsStyle + " " || 'panel-default ')}" role="${panelRole}" onclick=${(opts.onClick && opts.onClick)}>
+    <div class="${(props.bsClass && props.bsClass + " " || 'panel ')
+                + (props.bsStyle && "panel-" + props.bsStyle + " " || 'panel-default ')}" role="${panelRole}" onclick=${(props.onClick && props.onClick)}>
       ${header}
       <div class="panel-body">
-        ${_yield}
+        ${Children(arguments)}
       </div>
       ${footer}
     </div>

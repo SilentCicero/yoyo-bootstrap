@@ -1,19 +1,19 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/grid.css")
 
-const Checkbox = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Checkbox = function(props) {
+  props = props || {}
 
-  var content = _yield && yo`<label>${_yield}<label>` || "";
-  var class = (opts.bsClass && opts.bsClass + " "
-              || (opts.inline && "checkbox-inline " || 'checkbox '))
-              + (opts.validationState && "has-" + opts.validationState + " " || ' ');
-  var checkbox = yo`<input ${(opts.disabled && 'disabled ' || ' ')
-                           + (opts.checked && 'checked="checked" ' || ' ')
-                           + (opts.readOnly && "readOnly " || " ")} type="checkbox" />`
+  var content = Children(arguments) && yo`<label>${Children(arguments)}<label>` || "";
+  var class = (props.bsClass && props.bsClass + " "
+              || (props.inline && "checkbox-inline " || 'checkbox '))
+              + (props.validationState && "has-" + props.validationState + " " || ' ');
+  var checkbox = yo`<input ${(props.disabled && 'disabled ' || ' ')
+                           + (props.checked && 'checked="checked" ' || ' ')
+                           + (props.readOnly && "readOnly " || " ")} type="checkbox" />`
 
-  if(opts.inline)
+  if(props.inline)
     return yo`
       <label class="${class}">
         ${checkbox}

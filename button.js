@@ -1,29 +1,29 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/buttons.css")
 
-const Button = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Button = function(props) {
+  props = props || {}
 
-  var elClass = (opts.bsClass && opts.bsClass + " " || 'btn')
-      + (opts.active && 'active' + " " || '')
-      + (opts.bsSize && 'btn-' + opts.bsSize + " " || '')
-      + (opts.bsStyle && 'btn-' + opts.bsStyle + " " || 'btn-default');
-  var onClick = opts.onClick && opts.onClick || "";
-  var elType = opts.type && opts.type || "button";
-  var disabled = opts.disabled && "disabled " || '';
-  var target = opts.target && opts.target || '';
+  var elClass = (props.bsClass && props.bsClass + " " || 'btn')
+      + (props.active && 'active' + " " || '')
+      + (props.bsSize && 'btn-' + props.bsSize + " " || '')
+      + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default');
+  var onClick = props.onClick && props.onClick || "";
+  var elType = props.type && props.type || "button";
+  var disabled = props.disabled && "disabled " || '';
+  var target = props.target && props.target || '';
 
-  if(opts.href) {
+  if(props.href) {
     return yo`
-      <a href="${opts.href}" target="${target}" class="${elClass}" ${disabled}>
-        ${_yield}
+      <a href="${props.href}" target="${target}" class="${elClass}" ${disabled}>
+        ${Children(arguments)}
       </a>
       `
   } else {
     return yo`
       <button type=${elType} onclick=${onClick} class="${elClass}" ${disabled}>
-        ${_yield}
+        ${Children(arguments)}
       </button>
       `
   }

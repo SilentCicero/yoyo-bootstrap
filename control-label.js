@@ -1,13 +1,13 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/forms.css")
 
-const ControlLabel = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const ControlLabel = function(props) {
+  props = props || {}
 
   return yo`
-    <label class="${(opts.bsClass && opts.bsClass + " " || 'control-label ')}">
-      ${_yield}
+    <label class="${(props.bsClass && props.bsClass + " " || 'control-label ')}">
+      ${Children(arguments)}
     </label>
     `
 }

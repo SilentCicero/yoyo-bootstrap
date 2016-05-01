@@ -1,13 +1,13 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/grid.css")
 
-const Row = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Row = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'row ')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'row ')}">
+      ${Children(arguments)}
     </div>
     `
 }

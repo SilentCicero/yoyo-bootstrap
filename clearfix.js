@@ -1,16 +1,16 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/responsive-utilities.css")
 
-const Clearfix = function(opts, _yield) {
-    opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Clearfix = function(props) {
+    props = props || {}
 
   return yo`
-    <div class="${(opts.visibleLgBlock && "visible-lg-block " || '')
-                + (opts.visibleMdBlock && "visible-md-block " || '')
-                + (opts.visibleSmBlock && "visible-sm-block " || '')
-                + (opts.visibleXsBlock && "visible-xs-block " || '')}">
-      ${_yield}
+    <div class="${(props.visibleLgBlock && "visible-lg-block " || '')
+                + (props.visibleMdBlock && "visible-md-block " || '')
+                + (props.visibleSmBlock && "visible-sm-block " || '')
+                + (props.visibleXsBlock && "visible-xs-block " || '')}">
+      ${Children(arguments)}
     </div>
     `
 }

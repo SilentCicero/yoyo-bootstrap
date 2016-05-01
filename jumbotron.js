@@ -1,13 +1,13 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/jumbotron.css")
 
-const Jumbotron = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Jumbotron = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass || 'jumbotron')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass || 'jumbotron')}">
+      ${Children(arguments)}
     </div>
     `
 }

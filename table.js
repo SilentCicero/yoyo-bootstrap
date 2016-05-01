@@ -1,19 +1,19 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/tables.css")
 
-const Table = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Table = function(props) {
+  props = props || {}
 
-  var elClass = (opts.bsClass && opts.bsClass + " " || 'table ')
-              + (opts.striped && "table-striped " || '')
-              + (opts.bordered && "table-bordered " || '')
-              + (opts.condensed && "table-condensed " || '')
-              + (opts.hover && "table-hover " || '');
+  var elClass = (props.bsClass && props.bsClass + " " || 'table ')
+              + (props.striped && "table-striped " || '')
+              + (props.bordered && "table-bordered " || '')
+              + (props.condensed && "table-condensed " || '')
+              + (props.hover && "table-hover " || '');
 
   return yo`
     <table class="${elClass}">
-      ${_yield}
+      ${Children(arguments)}
     </table>
     `
 }

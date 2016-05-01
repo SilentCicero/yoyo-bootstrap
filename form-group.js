@@ -1,15 +1,15 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/forms.css")
 
-const FormGroup = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const FormGroup = function(props) {
+  props = props || {}
 
   return yo`
-    <div id="${(opts.controlId && opts.controlId || '')}" class="${(opts.bsClass && opts.bsClass || 'form-group')
-                + (opts.bsSize && "form-group-" + opts.bsSize + " " || '')
-                + (opts.validationState && "has-" + opts.validationState + " " || '')}">
-      ${_yield}
+    <div id="${(props.controlId && props.controlId || '')}" class="${(props.bsClass && props.bsClass || 'form-group')
+                + (props.bsSize && "form-group-" + props.bsSize + " " || '')
+                + (props.validationState && "has-" + props.validationState + " " || '')}">
+      ${Children(arguments)}
     </div>
     `
 }

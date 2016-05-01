@@ -1,30 +1,30 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/forms.css")
 
-const FormControl = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const FormControl = function(props) {
+  props = props || {}
 
-  var class = (opts.bsClass && opts.bsClass + " " || 'form-control ')
-  var type = (opts.type && opts.type || 'text')
-  var placeholder = (opts.placeholder && opts.placeholder || '')
-  var id = (opts.id && opts.id || '')
-  var multiple = (opts.multiple && opts.multiple || '')
-  var label = (opts.label && yo`<label class="control-label">${opts.label}</label>` || '')
-  var componentClass = (opts.componentClass && opts.componentClass || "input")
+  var class = (props.bsClass && props.bsClass + " " || 'form-control ')
+  var type = (props.type && props.type || 'text')
+  var placeholder = (props.placeholder && props.placeholder || '')
+  var id = (props.id && props.id || '')
+  var multiple = (props.multiple && props.multiple || '')
+  var label = (props.label && yo`<label class="control-label">${props.label}</label>` || '')
+  var componentClass = (props.componentClass && props.componentClass || "input")
 
   if(componentClass === "select") {
     return yo`
       ${label}
       <select id="${id}" class="${class}" placeholder="${placeholder}" ${multiple} />
-        ${_yield}
+        ${Children(arguments)}
       </select>
       `
   } else if(componentClass === "textarea") {
     return yo`
       ${label}
       <textarea id="${id}" class="${class}" placeholder="${placeholder}">
-        ${_yield}
+        ${Children(arguments)}
       </textarea>
       `
   } else {
@@ -35,30 +35,30 @@ const FormControl = function(opts, _yield) {
   }
 }
 
-FormControl.Static = function(opts, _yield) {
-  opts = opts || {}
+FormControl.Static = function(props, _yield) {
+  props = props || {}
   _yield = typeof _yield === "undefined" && "" || _yield
 
   return yo`
-    <p class="${(opts.bsClass && opts.bsClass + " " || 'form-control-static ')}">
-      ${_yield}
+    <p class="${(props.bsClass && props.bsClass + " " || 'form-control-static ')}">
+      ${Children(arguments)}
     </p>
     `
 }
 
-FormControl.Feedback = function(opts, _yield) {
-  opts = opts || {}
+FormControl.Feedback = function(props, _yield) {
+  props = props || {}
   _yield = typeof _yield === "undefined" && "" || _yield
 
-  var glyphicon = opts.glyph && opts.glyph
-               || ((opts.validationState === "success" && "ok" || "")
-                + (opts.validationState === "warning" && "warning-sign" || "")
-                + (opts.validationState === "warning" && "warning-remove" || ""));
+  var glyphicon = props.glyph && props.glyph
+               || ((props.validationState === "success" && "ok" || "")
+                + (props.validationState === "warning" && "warning-sign" || "")
+                + (props.validationState === "warning" && "warning-remove" || ""));
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'form-control-feedback glyphicon')
+    <span class="${(props.bsClass && props.bsClass + " " || 'form-control-feedback glyphicon')
                  + (glyphicon && 'glyphicon-' + glyphicon + " " || "")}">
-      ${_yield}
+      ${Children(arguments)}
     </span>
     `
 }

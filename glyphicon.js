@@ -1,13 +1,12 @@
 const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/scaffolding.css")
 
-const Glyphicon = function(opts) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Glyphicon = function(props) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'glyphicon ')
-                + (opts.glyph && "glyphicon-" + opts.glyph + ' ' || ' ')}">
+    <span class="${(props.bsClass && props.bsClass + " " || 'glyphicon ')
+                + (props.glyph && "glyphicon-" + props.glyph + ' ' || ' ')}">
     </span>
     `
 }

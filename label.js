@@ -1,14 +1,14 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/labels.css")
 
-const Label = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Label = function(props) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'label ')
-                 + (opts.bsStyle && "label-" + opts.bsStyle + " " || 'label-default ')}">
-      ${_yield}
+    <span class="${(props.bsClass && props.bsClass + " " || 'label ')
+                 + (props.bsStyle && "label-" + props.bsStyle + " " || 'label-default ')}">
+      ${Children(arguments)}
     </span>
     `
 }

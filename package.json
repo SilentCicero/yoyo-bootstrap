@@ -1,6 +1,6 @@
 {
   "name": "yoyo-bootstrap",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A yoyo implementation of the bootstrap visual framework",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "bootstrap-css": "^3.0.0",
     "throw-down": "^0.1.2",
-    "dom101": "git://github.com/SilentCicero/dom101.git",
+    "dom101": "^1.3.0",
     "yo-yo": "^1.1.1"
   }
 }

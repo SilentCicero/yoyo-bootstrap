@@ -1,35 +1,33 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/grid.css")
 
-const InputGroup = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const InputGroup = function(props) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'input-group ')}">
-      ${_yield}
+    <span class="${(props.bsClass && props.bsClass + " " || 'input-group ')}">
+      ${Children(arguments)}
     </span>
     `
 }
 
-InputGroup.Addon = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+InputGroup.Addon = function(props, _yield) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'input-group-addon ')}">
-      ${_yield}
+    <span class="${(props.bsClass && props.bsClass + " " || 'input-group-addon ')}">
+      ${Children(arguments)}
     </span>
     `
 }
 
-InputGroup.Button = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+InputGroup.Button = function(props, _yield) {
+  props = props || {}
 
   return yo`
-    <span class="${(opts.bsClass && opts.bsClass + " " || 'input-group-btn ')}">
-      ${_yield}
+    <span class="${(props.bsClass && props.bsClass + " " || 'input-group-btn ')}">
+      ${Children(arguments)}
     </span>
     `
 }

@@ -1,13 +1,13 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/button-groups.css")
 
-const ButtonToolbar = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const ButtonToolbar = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass || 'btn-toolbar')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass || 'btn-toolbar')}">
+      ${Children(arguments)}
     </div>
     `
 }

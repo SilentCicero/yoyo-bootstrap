@@ -1,16 +1,16 @@
 const yo = require("yo-yo")
 require("./node_modules/bootstrap-css/lib/scaffolding.css")
 
-const Image = function(opts) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Image = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || ' ')
-                + (opts.rounded && "img-rounded " || ' ')
-                + (opts.circle && "img-circle " || ' ')
-                + (opts.responsive && "img-responsive " || ' ')
-                + (opts.thumbnail && "img-thumbnail " || ' ')}">
+    <img class="${(props.bsClass && props.bsClass + " " || ' ')
+                + (props.rounded && "img-rounded " || ' ')
+                + (props.circle && "img-circle " || ' ')
+                + (props.responsive && "img-responsive " || ' ')
+                + (props.thumbnail && "img-thumbnail " || ' ')}"
+                src="${props.src && props.src || ""}" />
     `
 }
 

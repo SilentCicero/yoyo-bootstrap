@@ -1,24 +1,24 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/list-group-item.css")
 
-const ListGroupItem = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const ListGroupItem = function(props) {
+  props = props || {}
 
-  var elClass = (opts.bsClass && opts.bsClass + " " || 'list-group-item ')
-                + (opts.active && 'active ' || '')
-                + (opts.bsStyle && 'list-group-item-' + opts.bsStyle + " " || '')
-                + (opts.className && + opts.className + " " || '')
-                + (opts.disabled && 'disabled ' || '');
-  var content = (opts.heading && yo`
-      <h4 class="list-group-item-heading">${opts.heading}</h4>
-      <p class="list-group-item-text">${_yield}</p>
-      ` || _yield);
+  var elClass = (props.bsClass && props.bsClass + " " || 'list-group-item ')
+                + (props.active && 'active ' || '')
+                + (props.bsStyle && 'list-group-item-' + props.bsStyle + " " || '')
+                + (props.className && + props.className + " " || '')
+                + (props.disabled && 'disabled ' || '');
+  var content = (props.heading && yo`
+      <h4 class="list-group-item-heading">${props.heading}</h4>
+      <p class="list-group-item-text">${Children(arguments)}</p>
+      ` || Children(arguments));
 
-  if(opts.href)
+  if(props.href)
     return yo`
-      <a href="${opts.href}"
-         target="${(opts.target && opts.target || '')}"
+      <a href="${props.href}"
+         target="${(props.target && props.target || '')}"
          class="${elClass}">
         ${content}
       </a>

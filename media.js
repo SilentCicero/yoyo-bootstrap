@@ -1,79 +1,73 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/media.css")
 
-const Media = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const Media = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'media ')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'media ')}">
+      ${Children(arguments)}
     </div>
     `
 }
 
-Media.List = function(opts, _yield) {
-  opts = typeof opts === "undefined" && {} || opts
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.List = function(props) {
+  props = props || {}
 
   return yo`
-    <ul class="${(opts.bsClass && opts.bsClass + " " || 'media-list ')}">
-      ${_yield}
+    <ul class="${(props.bsClass && props.bsClass + " " || 'media-list ')}">
+      ${Children(arguments)}
     </ul>
     `
 }
 
-Media.ListItem = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.ListItem = function(props) {
+  props = props || {}
 
   return yo`
-    <li class="${(opts.bsClass && opts.bsClass + " " || 'media ')}">
-      ${_yield}
+    <li class="${(props.bsClass && props.bsClass + " " || 'media ')}">
+      ${Children(arguments)}
     </li>
     `
 }
 
-Media.Left = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.Left = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'media-left ')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'media-left ')}">
+      ${Children(arguments)}
     </div>
     `
 }
 
-Media.Right = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.Right = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'media-right ')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'media-right ')}">
+      ${Children(arguments)}
     </div>
     `
 }
 
-Media.Heading = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.Heading = function(props) {
+  props = props || {}
 
   return yo`
-    <h4 class="${(opts.bsClass && opts.bsClass + " " || 'media-heading ')}">
-      ${_yield}
+    <h4 class="${(props.bsClass && props.bsClass + " " || 'media-heading ')}">
+      ${Children(arguments)}
     </h4>
     `
 }
 
-Media.Body = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+Media.Body = function(props) {
+  props = props || {}
 
   return yo`
-    <div class="${(opts.bsClass && opts.bsClass + " " || 'media-body ')}">
-      ${_yield}
+    <div class="${(props.bsClass && props.bsClass + " " || 'media-body ')}">
+      ${Children(arguments)}
     </div>
     `
 }

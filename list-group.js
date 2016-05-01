@@ -1,23 +1,23 @@
 const yo = require("yo-yo")
+const Children = require("./children")
 require("./node_modules/bootstrap-css/lib/list-group.css")
 
-const ListGroup = function(opts, _yield) {
-  opts = opts || {}
-  _yield = typeof _yield === "undefined" && "" || _yield
+const ListGroup = function(props) {
+  props = props || {}
 
-  var elClass = opts.bsClass && opts.bsClass || 'list-group',
-      id = opts.id && opts.id || '';
+  var elClass = props.bsClass && props.bsClass || 'list-group',
+      id = props.id && props.id || '';
 
-  if(opts.componentClass == "ul")
+  if(props.componentClass == "ul")
     return yo`
       <ul id="${id}" class="${elClass}">
-        ${_yield}
+        ${Children(arguments)}
       </ul>
       `
   else
     return yo`
       <div id="${id}" class="${elClass}">
-        ${_yield}
+        ${Children(arguments)}
       </div>
       `
 }
