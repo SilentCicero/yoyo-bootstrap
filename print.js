@@ -1,3 +1,3 @@
-const Print = require("./node_modules/bootstrap-css/lib/normalize.css")
+const Print = require("./css/print.css")
 
 module.exports = Print

@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/progress-bars.css")
+require("./css/progress-bars.css")
 
 const ProgressBar = function(props) {
   props = props || {}

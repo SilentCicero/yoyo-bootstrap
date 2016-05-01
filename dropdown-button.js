@@ -2,7 +2,7 @@ const yo = require("yo-yo")
 const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
-require("./node_modules/bootstrap-css/lib/dropdowns.css")
+require("./css/dropdowns.css")
 
 const DropdownButton = function(props) {
   props = props || {}

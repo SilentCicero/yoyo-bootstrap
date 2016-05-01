@@ -1,3 +1,3 @@
-const Normalize = require("./node_modules/bootstrap-css/lib/normalize.css")
+const Normalize = require("./css/normalize.css")
 
 module.exports = Normalize

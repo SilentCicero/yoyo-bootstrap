@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/type.css")
+require("./css/type.css")
 
 const PageHeader = function(props) {
   props = props || {}

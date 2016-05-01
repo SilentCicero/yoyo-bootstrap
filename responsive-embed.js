@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/responsive-embed.css")
+require("./css/responsive-embed.css")
 
 const ResponsiveEmbed = function(props) {
   props = props || {}

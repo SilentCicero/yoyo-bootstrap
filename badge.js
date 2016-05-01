@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/utilities.css")
+require("./css/utilities.css")
 
 const Badge = function(props) {
   props = props || {}

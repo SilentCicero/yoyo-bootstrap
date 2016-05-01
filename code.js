@@ -1,3 +1,3 @@
-const Code = require("./node_modules/bootstrap-css/lib/code.css")
+const Code = require("./css/code.css")
 
 module.exports = Code

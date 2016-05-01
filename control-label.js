@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/forms.css")
+require("./css/forms.css")
 
 const ControlLabel = function(props) {
   props = props || {}

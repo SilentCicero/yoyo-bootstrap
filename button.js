@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/buttons.css")
+require("./css/buttons.css")
 
 const Button = function(props) {
   props = props || {}

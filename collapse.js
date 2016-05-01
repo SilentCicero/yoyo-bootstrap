@@ -3,7 +3,7 @@ const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
 const outerHeight = require("dom101/outer-height")
-require("./node_modules/bootstrap-css/lib/component-animations.css")
+require("./css/component-animations.css")
 
 const Collapse = function(props) {
     props = props || {}

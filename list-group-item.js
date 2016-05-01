@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/list-group-item.css")
+require("./css/list-group-item.css")
 
 const ListGroupItem = function(props) {
   props = props || {}

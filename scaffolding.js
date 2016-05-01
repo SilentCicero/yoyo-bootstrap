@@ -1,3 +1,3 @@
-const Scaffolding = require("./node_modules/bootstrap-css/lib/scaffolding.css")
+const Scaffolding = require("./css/scaffolding.css")
 
 module.exports = Scaffolding

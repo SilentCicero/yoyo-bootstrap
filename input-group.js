@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/grid.css")
+require("./css/grid.css")
 
 const InputGroup = function(props) {
   props = props || {}

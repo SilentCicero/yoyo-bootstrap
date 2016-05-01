@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/component-animations.css")
+require("./css/component-animations.css")
 
 const Fade = function(props) {
   props = props || {}

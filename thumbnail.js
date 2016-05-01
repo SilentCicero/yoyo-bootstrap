@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/thumbnails.css")
+require("./css/thumbnails.css")
 
 const Thumbnail = function(props) {
   props = props || {}

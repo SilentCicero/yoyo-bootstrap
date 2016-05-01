@@ -1,3 +1,3 @@
-const Type = require("./node_modules/bootstrap-css/lib/type.css")
+const Type = require("./css/type.css")
 
 module.exports = Type

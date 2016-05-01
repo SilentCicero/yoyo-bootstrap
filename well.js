@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/wells.css")
+require("./css/wells.css")
 
 const Well = function(props) {
   props = props || {}

@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/dropdowns.css")
+require("./css/dropdowns.css")
 
 const MenuItem = function(props) {
   props = props || {}

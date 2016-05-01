@@ -1,5 +1,5 @@
 const yo = require("yo-yo")
-require("./node_modules/bootstrap-css/lib/scaffolding.css")
+require("./css/scaffolding.css")
 
 const Glyphicon = function(props) {
   props = props || {}

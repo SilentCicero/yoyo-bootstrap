@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./node_modules/bootstrap-css/lib/responsive-utilities.css")
+require("./css/responsive-utilities.css")
 
 const Clearfix = function(props) {
     props = props || {}
