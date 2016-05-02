@@ -16,22 +16,28 @@ const FormControl = function(props) {
 
   if(componentClass === "select") {
     return yo`
-      ${label}
-      <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
-        ${Children(arguments)}
-      </select>
+      <span>
+        ${label}
+        <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
+          ${Children(arguments)}
+        </select>
+      </span>
       `
   } else if(componentClass === "textarea") {
     return yo`
-      ${label}
-      <textarea id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}">
-        ${Children(arguments)}
-      </textarea>
+      <span>
+        ${label}
+        <textarea id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}">
+          ${Children(arguments)}
+        </textarea>
+      </span>
       `
   } else {
     return yo`
-      ${label}
-      <input id="${id}" type="${type}" disabled=${disabled} class="${className}" placeholder="${placeholder}" />
+      <span>
+        ${label}
+        <input id="${id}" type="${type}" disabled=${disabled} class="${className}" placeholder="${placeholder}" />
+      </span>
       `
   }
 }
