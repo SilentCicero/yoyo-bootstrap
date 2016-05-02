@@ -8,25 +8,15 @@ const Button = function(props) {
   var elClass = (props.bsClass && props.bsClass + " " || 'btn ')
       + (props.active && 'active' + " " || '')
       + (props.bsSize && 'btn-' + props.bsSize + " " || '')
-      + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default ');
-  var onClick = props.onClick && props.onClick || "";
-  var elType = props.type && props.type || "button";
-  var disabled = props.disabled && " disabled " || '';
-  var target = props.target && props.target || '';
+      + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default ')
+  var onClick = props.onClick && props.onClick || ""
+  var elType = props.type && props.type || "button"
+  var disabled = props.disabled && " 1 " || 'false'
+  var target = props.target && props.target || ''
 
-  if(props.href) {
-    return yo`
-      <a href="${props.href}" target="${target}" class="${elClass}" ${disabled}>
-        ${Children(arguments)}
-      </a>
-      `
-  } else {
-    return yo`
-      <button type=${elType} onclick=${onClick} class="${elClass}" ${disabled}>
-        ${Children(arguments)}
-      </button>
-      `
-  }
+  return props.href
+    && yo`<a href="${props.href}" target="${target}" class="${elClass}" disabled="${disabled}">${Children(arguments)}</a>`
+    || yo`<button type=${elType} onclick=${onClick} class="${elClass}" disabled="${disabled}">${Children(arguments)}</button>`
 }
 
 module.exports = Button

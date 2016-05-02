@@ -10,27 +10,28 @@ const FormControl = function(props) {
   var placeholder = (props.placeholder && props.placeholder || '')
   var id = (props.id && props.id || '')
   var multiple = (props.multiple && props.multiple || '')
+  var disabled = (props.disabled && "true" || 'false')
   var label = (props.label && yo`<label class="control-label">${props.label}</label>` || '')
   var componentClass = (props.componentClass && props.componentClass || "input")
 
   if(componentClass === "select") {
     return yo`
       ${label}
-      <select id="${id}" class="${class}" placeholder="${placeholder}" ${multiple} />
+      <select id="${id}" class="${class}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
         ${Children(arguments)}
       </select>
       `
   } else if(componentClass === "textarea") {
     return yo`
       ${label}
-      <textarea id="${id}" class="${class}" placeholder="${placeholder}">
+      <textarea id="${id}" class="${class}" disabled=${disabled} placeholder="${placeholder}">
         ${Children(arguments)}
       </textarea>
       `
   } else {
     return yo`
       ${label}
-      <input id="${id}" type="${type}" class="${class}" placeholder="${placeholder}" />
+      <input id="${id}" type="${type}" disabled=${disabled} class="${class}" placeholder="${placeholder}" />
       `
   }
 }

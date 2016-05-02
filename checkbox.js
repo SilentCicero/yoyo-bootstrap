@@ -9,7 +9,7 @@ const Checkbox = function(props) {
   var class = (props.bsClass && props.bsClass + " "
               || (props.inline && "checkbox-inline " || 'checkbox '))
               + (props.validationState && "has-" + props.validationState + " " || ' ');
-  var checkbox = yo`<input ${(props.disabled && 'disabled ' || ' ')
+  var checkbox = yo`<input disabled=${(props.disabled && 'true ' || 'false ')
                            + (props.checked && 'checked="checked" ' || ' ')
                            + (props.readOnly && "readOnly " || " ")} type="checkbox" />`
 

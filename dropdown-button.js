@@ -30,7 +30,7 @@ const DropdownButton = function(props) {
       <div class="${(props.bsClass && props.bsClass + " " || 'dropdown btn-group ')
                   + (open && "open " || "")
                   + (props.bsSize && "btn-group-" + props.bsSize || "")}">
-        <button onclick=${toggle} class=${"btn dropdown-toggle "
+        <button onclick=${toggle} disabled=${opts.disabled && "true" || "false"} class=${"btn dropdown-toggle "
                       + (props.bsSize && "btn-" + props.bsSize + " " || "")
                       + (props.bsStyle && "btn-" + props.bsStyle + " " || "")} role="button" type="button" />
           ${props.title || ""}
