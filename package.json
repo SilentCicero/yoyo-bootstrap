@@ -1,14 +1,14 @@
 {
-  "name": "yoyo-bootstrap",
-  "version": "0.0.12",
-  "description": "Bootstrap components for the actual DOM (built with yoyo)",
+  "name": "dom-bootstrap",
+  "version": "0.0.1",
+  "description": "Bootstrap components for the actual DOM",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/silentcicero/yoyo-bootstrap.git"
+    "url": "git+ssh://git@github.com/silentcicero/dom-bootstrap.git"
   },
   "keywords": [
     "yoyo",
@@ -18,9 +18,9 @@
   "author": "= <=>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/silentcicero/yoyo-bootstrap/issues"
+    "url": "https://github.com/silentcicero/dom-bootstrap/issues"
   },
-  "homepage": "https://github.com/silentcicero/yoyo-bootstrap#readme",
+  "homepage": "https://github.com/silentcicero/dom-bootstrap#readme",
   "devDependencies": {
     "bootstrap-css": "^3.0.0"
   },
