@@ -28,16 +28,20 @@ const DropdownButton = function(props) {
   function onupdate(node) {el = node}
 
   function render(_yield) {
+    var btn = yo`<button onclick=${toggle} class=${"btn dropdown-toggle "
+                  + (props.bsSize && "btn-" + props.bsSize + " " || "")
+                  + (props.bsStyle && "btn-" + props.bsStyle + " " || "")} role="button" type="button" />
+      ${props.title || ""}
+      ${props.noCaret && "" || yo`<span class="caret"></span>`}
+    </button>`
+
+    if(props.disabled) btn.setAttribute("disabled", true)
+
     return yo`
       <div class="${(props.bsClass && props.bsClass + " " || 'dropdown btn-group ')
                   + (open && "open " || "")
                   + (props.bsSize && "btn-group-" + props.bsSize || "")}">
-        <button onclick=${toggle} disabled=${opts.disabled && "true" || "false"} class=${"btn dropdown-toggle "
-                      + (props.bsSize && "btn-" + props.bsSize + " " || "")
-                      + (props.bsStyle && "btn-" + props.bsStyle + " " || "")} role="button" type="button" />
-          ${props.title || ""}
-          ${props.noCaret && "" || yo`<span class="caret"></span>`}
-        </button>
+        ${btn}
         <ul class="dropdown-menu">
           ${(typeof _yield === "array" && _yield.map(function(item){return item;}) || Children(arguments))}
         </ul>

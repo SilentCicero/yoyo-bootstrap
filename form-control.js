@@ -7,41 +7,28 @@ require("./less/forms.less")
 const FormControl = function(props) {
   props = props || {}
 
-  var className = (props.bsClass && props.bsClass + " " || 'form-control ')
-  var type = (props.type && props.type || 'text')
-  var placeholder = (props.placeholder && props.placeholder || '')
-  var id = (props.id && props.id || '')
-  var multiple = (props.multiple && "true" || 'false')
-  var disabled = (props.disabled && "true" || 'false')
-  var label = (props.label && yo`<label class="control-label">${props.label}</label>` || '')
-  var componentClass = (props.componentClass && props.componentClass || "input")
+  var className = (props.bsClass && props.bsClass + " " || 'form-control '),
+      type = (props.type && props.type || 'text'),
+      placeholder = (props.placeholder && props.placeholder || ''),
+      id = (props.id && props.id || ''), el,
+      label = (props.label && yo`<label class="control-label">${props.label}</label>` || ''),
+      componentClass = (props.componentClass && props.componentClass || "input")
 
   if(componentClass === "select") {
-    return yo`
-      <span>
-        ${label}
-        <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" multiple=${multiple} />
+    el = yo`<select id="${id}" class="${className}" placeholder="${placeholder}" />
           ${Children(arguments)}
-        </select>
-      </span>
-      `
+        </select>`
   } else if(componentClass === "textarea") {
-    return yo`
-      <span>
-        ${label}
-        <textarea id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}">
-          ${Children(arguments)}
-        </textarea>
-      </span>
-      `
+    el = yo`<textarea id="${id}" class="${className}" placeholder="${placeholder}">`
   } else {
-    return yo`
-      <span>
-        ${label}
-        <input id="${id}" type="${type}" disabled=${disabled} class="${className}" placeholder="${placeholder}" />
-      </span>
-      `
+    el = yo`<input id="${id}" type="${type}" class="${className}" placeholder="${placeholder}" />`
   }
+
+  if(props.disabled) el.setAttribute("disabled", true)
+
+  if(props.multiple) el.setAttribute("multiple", true)
+
+  return yo`<span> ${label} ${el} </span>`
 }
 
 FormControl.Static = function(props, _yield) {

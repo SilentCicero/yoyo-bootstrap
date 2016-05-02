@@ -13,12 +13,14 @@ const Button = function(props) {
       + (props.bsStyle && 'btn-' + props.bsStyle + " " || 'btn-default ')
   var onClick = props.onClick && props.onClick || ""
   var elType = props.type && props.type || "button"
-  var disabled = props.disabled && " 1 " || 'false'
   var target = props.target && props.target || ''
+  var el = props.href
+    && yo`<a href="${props.href}" target="${target}" class="${elClass}">${Children(arguments)}</a>`
+    || yo`<button type=${elType} onclick=${onClick} class="${elClass}">${Children(arguments)}</button>`
 
-  return props.href
-    && yo`<a href="${props.href}" target="${target}" class="${elClass}" disabled="${disabled}">${Children(arguments)}</a>`
-    || yo`<button type=${elType} onclick=${onClick} class="${elClass}" disabled="${disabled}">${Children(arguments)}</button>`
+  if(props.disabled) el.setAttribute("disabled", true)
+
+  return el
 }
 
 module.exports = Button
