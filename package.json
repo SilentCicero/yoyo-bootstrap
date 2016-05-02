@@ -1,6 +1,6 @@
 {
   "name": "yoyo-bootstrap",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Bootstrap components for the actual DOM (built with yoyo)",
   "main": "index.js",
   "scripts": {

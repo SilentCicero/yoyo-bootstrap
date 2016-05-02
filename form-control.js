@@ -5,7 +5,7 @@ require("./css/forms.css")
 const FormControl = function(props) {
   props = props || {}
 
-  var class = (props.bsClass && props.bsClass + " " || 'form-control ')
+  var className = (props.bsClass && props.bsClass + " " || 'form-control ')
   var type = (props.type && props.type || 'text')
   var placeholder = (props.placeholder && props.placeholder || '')
   var id = (props.id && props.id || '')
@@ -17,21 +17,21 @@ const FormControl = function(props) {
   if(componentClass === "select") {
     return yo`
       ${label}
-      <select id="${id}" class="${class}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
+      <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
         ${Children(arguments)}
       </select>
       `
   } else if(componentClass === "textarea") {
     return yo`
       ${label}
-      <textarea id="${id}" class="${class}" disabled=${disabled} placeholder="${placeholder}">
+      <textarea id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}">
         ${Children(arguments)}
       </textarea>
       `
   } else {
     return yo`
       ${label}
-      <input id="${id}" type="${type}" disabled=${disabled} class="${class}" placeholder="${placeholder}" />
+      <input id="${id}" type="${type}" disabled=${disabled} class="${className}" placeholder="${placeholder}" />
       `
   }
 }

@@ -7,15 +7,15 @@ const Thumbnail = function(props) {
 
   var src = (props.src && props.src + " " || ' '),
       alt = (props.alt && props.alt + " " || ' '),
-      elClass = (props.bsClass && props.bsClass + " " || 'thumbnail '),
+      className = (props.bsClass && props.bsClass + " " || 'thumbnail '),
       href = (props.href && props.href + " " || ' ');
 
   return props.href && yo `
-    <a src="${src}" class="${elClass}" role="button">
+    <a src="${src}" class="${className}" role="button">
       <img src="${src}" alt="${alt}" />
     </a>
     ` || yo `
-    <div src="${src}" class="${elClass}" alt="${alt}">
+    <div src="${src}" class="${className}" alt="${alt}">
       <img src="${src}" alt="${alt}" />
       <div class="caption">
         ${Children(arguments)}
