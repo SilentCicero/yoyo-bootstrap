@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/dropdowns.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/dropdowns.less")
 
 const MenuItem = function(props) {
   props = props || {}

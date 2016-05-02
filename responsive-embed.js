@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/responsive-embed.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/responsive-embed.less")
 
 const ResponsiveEmbed = function(props) {
   props = props || {}

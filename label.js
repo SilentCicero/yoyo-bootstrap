@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/labels.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/labels.less")
 
 const Label = function(props) {
   props = props || {}

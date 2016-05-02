@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/buttons.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/buttons.less")
 
 const Button = function(props) {
   props = props || {}

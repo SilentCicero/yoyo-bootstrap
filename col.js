@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/grid.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/grid.less")
 
 const Col = function(props) {
   props = props || {}

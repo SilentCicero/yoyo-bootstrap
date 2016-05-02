@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/list-group.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/list-group.less")
 
 const ListGroup = function(props) {
   props = props || {}

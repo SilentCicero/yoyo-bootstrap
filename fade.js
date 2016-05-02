@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/component-animations.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/component-animations.less")
 
 const Fade = function(props) {
   props = props || {}

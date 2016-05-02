@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/progress-bars.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/progress-bars.less")
 
 const ProgressBar = function(props) {
   props = props || {}

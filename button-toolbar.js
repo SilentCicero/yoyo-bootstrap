@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/button-groups.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/button-groups.less")
 
 const ButtonToolbar = function(props) {
   props = props || {}

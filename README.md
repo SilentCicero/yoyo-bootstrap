@@ -8,20 +8,21 @@ npm install --save yoyo-boostrap
 
 ## Features
 
- - returns pure DOM components
- - completely modularized and compartmentalized (i.e. `require("yoyo-bootstrap/button")`)
- - CSS baked into each module (only include the CSS you need)
- - follows the React Bootstrap documentation
- - almost 90% coverage of all bootstrap components
- - easily extensible
- - built with <a href="https://github.com/maxogden/yo-yo">yo-yo</a>, the lightest UI framework
- - minimal dependencies (average `4.1kb` minified + g-zipped, usually just `yo-yo`)
- - uses Bootstrap `3.3.6-stable` CSS
- - es6 import compatible (i.e. `import Alert, Button from 'yoyo-bootstrap'`)
+ - Returns pure DOM components
+ - Completely modularized and compartmentalized (i.e. `require("yoyo-bootstrap/button")`)
+ - LESS baked into each module (only include the CSS/LESS you need)
+ - Use custom Bootstrap themes (i.e. `bootswatch`)
+ - Follows the React Bootstrap documentation
+ - Almost 90% coverage of all bootstrap components
+ - Easily extensible
+ - Built with <a href="https://github.com/maxogden/yo-yo">yo-yo</a>, the lightest UI framework
+ - Minimal dependencies (average `4.1kb` minified + g-zipped, usually just `yo-yo`)
+ - Uses Bootstrap `3.3.6-stable` LESS
+ - ES6 import compatible (i.e. `import Alert, Button from 'yoyo-bootstrap'`)
 
 ## About
 
-Basically React Bootstrap but for the actual DOM. Include only the Bootstrap components and CSS you need in pure JS with proper argument nesting. All modules are actual DOM elements that can be directly appended and used in the DOM. All base level scaffolding and common CSS is included in helper modules (e.g. `yoyo-bootstrap/common`).
+Basically React Bootstrap but for the actual DOM with Bootstrap less baked in. Include only the Bootstrap components and CSS you need in pure JS with proper argument nesting. All modules are actual DOM elements that can be directly appended and used in the DOM. All base level scaffolding and common CSS is included in helper modules (e.g. `yoyo-bootstrap/common`).
 
 ## Usage
 
@@ -124,14 +125,6 @@ const Well = require("yoyo-bootstrap/well")
 const Children = require("yoyo-bootstrap/children")
 const Option = require("yoyo-bootstrap/option")
 ```
-
-## bootstrap-css - modularized bootstrap css using requireCSS
-
-`yoyo-bootstrap` uses `require(css)` statements `bootstrap-css` package to break up the various CSS modules. This means your development environment must support importing CSS via require statements in your `node_modules`.
-
-See browserifies <a href="https://www.npmjs.com/package/browserify-css">browserify-css</a> or webpack's <a href="https://github.com/webpack/css-loader">css-loader</a> to enable `require("file.css..")` statements.
-
-Checkout <a href="https://github.com/StevenIseki/bootstrap-css">`bootstrap-css`</a>
 
 ## dom101 - for basic DOM tooling
 

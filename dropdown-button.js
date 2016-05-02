@@ -2,7 +2,9 @@ const yo = require("yo-yo")
 const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
-require("./css/dropdowns.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/dropdowns.less")
 
 const DropdownButton = function(props) {
   props = props || {}

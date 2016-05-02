@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/wells.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/wells.less")
 
 const Well = function(props) {
   props = props || {}

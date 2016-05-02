@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/responsive-utilities.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/responsive-utilities.less")
 
 const Clearfix = function(props) {
     props = props || {}

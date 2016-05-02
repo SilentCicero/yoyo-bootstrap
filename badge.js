@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/utilities.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/utilities.less")
 
 const Badge = function(props) {
   props = props || {}

@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/panels.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/panels.less")
 
 const Panel = function(props) {
   props = props || {}

@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/labels.css")
+require("./less/labels.less")
 
 const Alert = function(props) {
   props = props || {}

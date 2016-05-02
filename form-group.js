@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/forms.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/forms.less")
 
 const FormGroup = function(props) {
   props = props || {}

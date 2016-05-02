@@ -3,7 +3,9 @@ const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
 const outerHeight = require("dom101/outer-height")
-require("./css/component-animations.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/component-animations.less")
 
 const Collapse = function(props) {
     props = props || {}

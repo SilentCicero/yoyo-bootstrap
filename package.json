@@ -1,6 +1,6 @@
 {
   "name": "yoyo-bootstrap",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Bootstrap components for the actual DOM (built with yoyo)",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/silentcicero/yoyo-bootstrap#readme",
   "devDependencies": {
-    "bootstrap-css": "^3.0.0"
+    "bootstrap": "^3.3.6"
   },
   "dependencies": {
     "throw-down": "^0.1.2",

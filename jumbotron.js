@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/jumbotron.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/jumbotron.less")
 
 const Jumbotron = function(props) {
   props = props || {}

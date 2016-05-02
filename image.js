@@ -1,5 +1,7 @@
 const yo = require("yo-yo")
-require("./css/scaffolding.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/scaffolding.less")
 
 const Image = function(props) {
   props = props || {}

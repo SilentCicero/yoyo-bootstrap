@@ -1,6 +1,8 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./css/tables.css")
+require("./less/variables.less")
+require("./less/mixins.less")
+require("./less/tables.less")
 
 const Table = function(props) {
   props = props || {}
