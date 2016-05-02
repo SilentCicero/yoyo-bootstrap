@@ -9,7 +9,7 @@ const FormControl = function(props) {
   var type = (props.type && props.type || 'text')
   var placeholder = (props.placeholder && props.placeholder || '')
   var id = (props.id && props.id || '')
-  var multiple = (props.multiple && props.multiple || '')
+  var multiple = (props.multiple && "true" || 'false')
   var disabled = (props.disabled && "true" || 'false')
   var label = (props.label && yo`<label class="control-label">${props.label}</label>` || '')
   var componentClass = (props.componentClass && props.componentClass || "input")
@@ -18,7 +18,7 @@ const FormControl = function(props) {
     return yo`
       <span>
         ${label}
-        <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" ${multiple} />
+        <select id="${id}" class="${className}" disabled=${disabled} placeholder="${placeholder}" multiple=${multiple} />
           ${Children(arguments)}
         </select>
       </span>
