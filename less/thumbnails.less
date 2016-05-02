@@ -1,36 +1,13 @@
-//
-// Thumbnails
-// --------------------------------------------------
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
+/* modified the import to break up the individual css components */
 
-// Mixin and adjust the regular image class
-.thumbnail {
-  display: block;
-  padding: @thumbnail-padding;
-  margin-bottom: @line-height-computed;
-  line-height: @line-height-base;
-  background-color: @thumbnail-bg;
-  border: 1px solid @thumbnail-border;
-  border-radius: @thumbnail-border-radius;
-  .transition(border .2s ease-in-out);
+// Core variables and mixins
+@import "./bootstrap/variables.less";
+@import "./bootstrap/mixins.less";
 
-  > img,
-  a > img {
-    &:extend(.img-responsive);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  // Add a hover state for linked versions only
-  a&:hover,
-  a&:focus,
-  a&.active {
-    border-color: @link-color;
-  }
-
-  // Image captions
-  .caption {
-    padding: @thumbnail-caption-padding;
-    color: @thumbnail-caption-color;
-  }
-}
+@import "./bootstrap/thumbnails.less";

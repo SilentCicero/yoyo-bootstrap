@@ -1,7 +1,5 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./less/variables.less")
-require("./less/mixins.less")
 require("./less/media.less")
 
 const Media = function(props) {

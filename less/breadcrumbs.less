@@ -1,26 +1,13 @@
-//
-// Breadcrumbs
-// --------------------------------------------------
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
+/* modified the import to break up the individual css components */
 
-.breadcrumb {
-  padding: @breadcrumb-padding-vertical @breadcrumb-padding-horizontal;
-  margin-bottom: @line-height-computed;
-  list-style: none;
-  background-color: @breadcrumb-bg;
-  border-radius: @border-radius-base;
+// Core variables and mixins
+@import "./bootstrap/variables.less";
+@import "./bootstrap/mixins.less";
 
-  > li {
-    display: inline-block;
-
-    + li:before {
-      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
-      padding: 0 5px;
-      color: @breadcrumb-color;
-    }
-  }
-
-  > .active {
-    color: @breadcrumb-active-color;
-  }
-}
+@import "./bootstrap/breadcrumbs.less";

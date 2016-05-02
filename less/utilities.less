@@ -1,55 +1,13 @@
-//
-// Utility classes
-// --------------------------------------------------
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
+/* modified the import to break up the individual css components */
 
-// Floats
-// -------------------------
+// Core variables and mixins
+@import "./bootstrap/variables.less";
+@import "./bootstrap/mixins.less";
 
-.clearfix {
-  .clearfix();
-}
-.center-block {
-  .center-block();
-}
-.pull-right {
-  float: right !important;
-}
-.pull-left {
-  float: left !important;
-}
-
-
-// Toggling content
-// -------------------------
-
-// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.hide {
-  display: none !important;
-}
-.show {
-  display: block !important;
-}
-.invisible {
-  visibility: hidden;
-}
-.text-hide {
-  .text-hide();
-}
-
-
-// Hide from screenreaders and browsers
-//
-// Credit: HTML5 Boilerplate
-
-.hidden {
-  display: none !important;
-}
-
-
-// For Affix plugin
-// -------------------------
-
-.affix {
-  position: fixed;
-}
+@import "./bootstrap/utilities.less";

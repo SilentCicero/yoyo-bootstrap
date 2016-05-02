@@ -1,7 +1,5 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./less/variables.less")
-require("./less/mixins.less")
 require("./less/thumbnails.less")
 
 const Thumbnail = function(props) {

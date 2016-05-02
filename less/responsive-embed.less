@@ -1,35 +1,13 @@
-// Embeds responsive
-//
-// Credit: Nicolas Gallagher and SUIT CSS.
+/*!
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
-.embed-responsive {
-  position: relative;
-  display: block;
-  height: 0;
-  padding: 0;
-  overflow: hidden;
+/* modified the import to break up the individual css components */
 
-  .embed-responsive-item,
-  iframe,
-  embed,
-  object,
-  video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-    border: 0;
-  }
-}
+// Core variables and mixins
+@import "./bootstrap/variables.less";
+@import "./bootstrap/mixins.less";
 
-// Modifier class for 16:9 aspect ratio
-.embed-responsive-16by9 {
-  padding-bottom: 56.25%;
-}
-
-// Modifier class for 4:3 aspect ratio
-.embed-responsive-4by3 {
-  padding-bottom: 75%;
-}
+@import "./bootstrap/responsive-embed.less";

@@ -1,6 +1,4 @@
 const yo = require("yo-yo")
-require("./less/variables.less")
-require("./less/mixins.less")
 require("./less/scaffolding.less")
 
 const Glyphicon = function(props) {
