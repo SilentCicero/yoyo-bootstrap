@@ -168,7 +168,14 @@ const Thumbnail = require("yoyo-bootstrap/thumbnail")
 const Well = require("yoyo-bootstrap/well")
 const Children = require("yoyo-bootstrap/children")
 const Option = require("yoyo-bootstrap/option")
+const Modal = require("yoyo-bootstrap/modal")
 ```
+
+## The Manual/Guide
+
+`yoyo-boostrap` uses the same conventions as the React Bootstrap package. Use their manual for property coverage on Bootstrap components. This way I don't need to write documentation =D
+
+Here: https://react-bootstrap.github.io/components.html
 
 ## dom101 - for basic DOM tooling
 
