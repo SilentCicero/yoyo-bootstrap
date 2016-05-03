@@ -169,6 +169,11 @@ const Well = require("yoyo-bootstrap/well")
 const Children = require("yoyo-bootstrap/children")
 const Option = require("yoyo-bootstrap/option")
 const Modal = require("yoyo-bootstrap/modal")
+const Navbar = require("yoyo-bootstrap/navbar")
+const NavItem = require("yoyo-bootstrap/nav-item")
+const Nav = require("yoyo-bootstrap/nav")
+const Breadcrumb = require("yoyo-bootstrap/breadcrumb")
+const Modal = require("yoyo-bootstrap/modal")
 ```
 
 ## The Manual/Guide

@@ -2,13 +2,10 @@ const yo = require("yo-yo")
 const Children = require("./children")
 const connect = require("throw-down/connect")
 const update = require("throw-down/update")(yo.update)
+const walk = require("./walk")
 require("./less/component-animations.less")
 require("./less/modals.less")
 require("./less/close.less")
-
-function walk (n, v) {
-  v(n); for (var i = 0; i < n.childNodes.length; i++) {walk(n.childNodes[i], v)}
-}
 
 const Modal = function(props) {
   props = props || {}
