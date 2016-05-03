@@ -74,6 +74,50 @@ document.body.appendChild(Form({},
 )
 ```
 
+how about a modal:
+
+```js
+const yo = require("yo-yo")
+const Common = require("yoyo-bootstrap/common")
+const Button = require("yoyo-bootstrap/button")
+const Modal = require("yoyo-bootstrap/modal")
+const connect = require("throw-down/connect")
+const update = require("throw-down/update")(yo.update)
+
+const Dialog = function(){
+  var id, show = false
+
+  function init (_id) {
+    id = _id
+  }
+
+  function toggle () {
+    show = !show;
+    update(id, render())
+  }
+
+  function render() {
+    return yo`
+    <div>
+      ${Button({bsStyle: "primary", bsSize: "large", onClick: toggle}, "Nicks Button")}
+      ${Modal({show: show, onHide: toggle},
+        Modal.Header({}, "Some Header"),
+        Modal.Body({}, "The Body"),
+        Modal.Footer({},
+          Button({bsStyle: "default", onClick: toggle}, "Close"),
+          Button({bsStyle: "primary"}, "Send")
+        )
+      )}
+    </div>
+    `
+  }
+
+  return connect(render, init)
+}
+
+document.body.appendChild(Dialog())
+```
+
 Notice, all component properties are notated the same as React Bootstrap. Use the React Bootstrap manual to walk through the various available properties for each component.
 
 Manual available here: https://react-bootstrap.github.io/components.html

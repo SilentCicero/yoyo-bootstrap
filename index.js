@@ -37,6 +37,7 @@ const Thumbnail = require("./thumbnail")
 const Well = require("./well")
 const Children = require("./children")
 const Option = require("./Option")
+const Modal = require("./Option")
 
 module.exports = {
   "Alert": Alert,
@@ -76,6 +77,7 @@ module.exports = {
   "Table": Table,
   "Thumbnail": Thumbnail,
   "Well": Well,
+  "Modal": Modal,
   "Children": Children,
   "Option": Option
 }
