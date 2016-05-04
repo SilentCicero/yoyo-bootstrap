@@ -174,6 +174,7 @@ const NavItem = require("yoyo-bootstrap/nav-item")
 const Nav = require("yoyo-bootstrap/nav")
 const Breadcrumb = require("yoyo-bootstrap/breadcrumb")
 const Modal = require("yoyo-bootstrap/modal")
+const Pagination = require("yoyo-bootstrap/pagination")
 ```
 
 ## The Manual/Guide

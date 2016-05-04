@@ -1,6 +1,6 @@
 const yo = require("yo-yo")
 const Children = require("./children")
-require("./less/grid.less")
+require("./less/breadcrumbs.less")
 
 const Breadcrumb = function(props) {
   props = props || {}

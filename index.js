@@ -36,8 +36,13 @@ const Table = require("./table")
 const Thumbnail = require("./thumbnail")
 const Well = require("./well")
 const Children = require("./children")
-const Option = require("./Option")
-const Modal = require("./Option")
+const Option = require("./option")
+const Modal = require("./modal")
+const Pagination = require("./pagination")
+const Breadcrumb = require("./breadcrumb")
+const Nav = require("./nav")
+const NavItem = require("./nav-item")
+const Navbar = require("./navbar")
 
 module.exports = {
   "Alert": Alert,
@@ -79,5 +84,10 @@ module.exports = {
   "Well": Well,
   "Modal": Modal,
   "Children": Children,
+  "Pagination": Pagination,
+  "Breadcrumb": Breadcrumb,
+  "Nav": Nav,
+  "NavItem": NavItem,
+  "Navbar": Navbar,
   "Option": Option
 }
