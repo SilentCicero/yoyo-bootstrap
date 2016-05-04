@@ -179,12 +179,12 @@ const Pagination = require("yoyo-bootstrap/pagination")
 
 ## Customizing LESS/Bootstrap
 
-You can completely customize `yoyo-bootstrap` LESS with your own overrides, mixins and variables. `yoyo-boostrap` looks for a `.bootstrap.less` file in your app root (in other words, place the `.bootstrap.less` config file beside your `node_modules` directory).
+You can completely customize `yoyo-bootstrap` LESS with your own overrides, mixins and variables. `yoyo-boostrap` looks for a `.bootstrap` file in your app root (in other words, place the `.bootstrap` config file beside your `node_modules` directory).
 
-You can override every aspect of the LESS architecture in your config LESS file. Here is an example `.bootstrap.less` config file. You can specify the variables folder path, mixin folder path, component folder path. You may also just override the variables/mixings/components with some custom mixins (that way you dont need to rebuilt all your own LESS).
+You can override every aspect of the LESS architecture in your config LESS file. Here is an example `.bootstrap` config file. You can specify the variables folder path, mixin folder path, component folder path. You may also just override the variables/mixings/components with some custom mixins (that way you dont need to rebuilt all your own LESS).
 
 ```less
-// .bootstrap.less
+// .bootstrap
 
 // set the variables path
 @variables-path:            "./bootstrap/variables.less";
