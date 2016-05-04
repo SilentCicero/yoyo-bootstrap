@@ -3,12 +3,9 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
 /* modified the import to break up the individual css components */
-
 // Core variables and mixins
-@import "./bootstrap/variables.less";
-@import "./bootstrap/mixins.less";
-
+@import "./bootstrap.less";
 // Components
-@import "./bootstrap/component-animations.less";
+@import "@{component-path}component-animations.less";
+@import (optional) "@{component-override-path}component-animations.less";

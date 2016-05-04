@@ -3,11 +3,8 @@
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
 /* modified the import to break up the individual css components */
-
 // Core variables and mixins
-@import "./bootstrap/variables.less";
-@import "./bootstrap/mixins.less";
-
-@import "./bootstrap/print.less";
+@import "./bootstrap.less";
+@import "@{component-path}print.less";
+@import (optional) "@{component-override-path}print.less";

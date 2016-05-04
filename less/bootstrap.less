@@ -1,0 +1,28 @@
+/*!
+ * yoyo-bootstrap
+ * Copyright 2016 Nick Dodson
+ * Licensed under MIT (https://github.com/silentcicero/yoyo-bootstrap/blob/master/LICENSE)
+ */
+// set the variables path
+@variables-path:             "./bootstrap/variables.less";
+// set the override variables path, used to just override specific functionality
+@variables-override-path:    "...";
+// set the mixins path
+@mixins-path:                "./bootstrap/mixins.less";
+// override mixins before the reach components
+@mixins-override-path:       "...";
+// set the component less path
+@component-path:             "./bootstrap/";
+// set the override component less path to override specific components Less
+@component-override-path:    "...";
+// bootstrap override
+
+@import (optional) "../../../.bootstrap.less";
+
+@import            "@{variables-path}";
+
+@import (optional) "@{variables-override-path}";
+
+@import            "@{mixins-path}";
+
+@import (optional) "@{mixins-override-path}";

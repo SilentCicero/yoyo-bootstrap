@@ -177,6 +177,43 @@ const Modal = require("yoyo-bootstrap/modal")
 const Pagination = require("yoyo-bootstrap/pagination")
 ```
 
+## Customizing LESS/Bootstrap
+
+You can completely customize `yoyo-bootstrap` LESS with your own overrides, mixins and variables. `yoyo-boostrap` looks for a `.bootstrap.less` file in your app root (in other words, place the `.bootstrap.less` config file beside your `node_modules` directory).
+
+You can override every aspect of the LESS architecture in your config LESS file. Here is an example `.bootstrap.less` config file. You can specify the variables folder path, mixin folder path, component folder path. You may also just override the variables/mixings/components with some custom mixins (that way you dont need to rebuilt all your own LESS).
+
+```less
+// .bootstrap.less
+
+// set the variables path
+@variables-path:            "./bootstrap/variables.less";
+
+// set the override variables path, used to just override specific functionality
+@variables-override-path:   "../../../style/variables.less";
+
+// set the mixins path
+@mixins-path:               "./bootstrap/mixins.less";
+
+// override mixins before the reach components
+@mixins-override-path:      "../../../style/mixins.less";
+
+// set the component less path
+@component-path:            "./bootstrap/";
+
+// set the override component less path to override specific components Less
+@component-override-path:   "../../../style/components/";
+
+// example component override "../../../style/components/buttons.less" =D
+// the above would override just the buttons less (used by the Button component)
+// that way you can change just the aspects of the Button component you want
+// without providing your own bootstrap less, or changing everything !
+```
+
+Note, overriding (i.e. `@variables-override-path`) will allow you to change/mixin specific variables or classes without totally changing everything whereas setting  (i.e. `@variables-path`) the actual variables/mixins/or component paths will require you to provide the LESS files.
+
+I would recommend using the overrides over completely setting new paths. This was you can change certain aspects of the components or base without having to change or provide all of bootstrap again.
+
 ## The Manual/Guide
 
 `yoyo-boostrap` uses the same conventions as the React Bootstrap package. Use their manual for property coverage on Bootstrap components. This way I don't need to write documentation =D

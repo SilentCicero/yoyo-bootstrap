@@ -8,14 +8,12 @@ const Fade = function(props) {
   var enter = (props.onEnter && props.in) && props.onEnter()
   var exit = (props.onExit && !props.in) && props.onExit()
 
-  let el = yo`
+  return yo`
     <div class=${(props.bsClass && props.bsClass + " " || 'fade ')
                 + (props.in && "in " || ' ')}>
       ${Children(arguments)}
     </div>
     `
-
-  return el
 }
 
 module.exports = Fade

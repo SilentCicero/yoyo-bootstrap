@@ -7,7 +7,6 @@
 /* modified the import to break up the individual css components */
 
 // Core variables and mixins
-@import "./bootstrap/variables.less";
-@import "./bootstrap/mixins.less";
-
-@import "./bootstrap/button-groups.less";
+@import "./bootstrap.less";
+@import "@{component-path}button-groups.less";
+@import (optional) "@{component-override-path}button-groups.less";
