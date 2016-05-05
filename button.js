@@ -17,6 +17,7 @@ const Button = function(props) {
     || yo`<button type=${elType} onclick=${onClick} class="${elClass}">${Children(arguments)}</button>`
 
   if(props.disabled) el.setAttribute("disabled", true)
+  if(props.onBlur) el.addEventListener("blur", props.onBlur)
 
   return el
 }

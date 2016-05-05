@@ -1,0 +1,65 @@
+@import "./bootstrap.less";
+
+.dropdown-datepicker {
+  width: 230px;
+
+  table {
+    width: 212px;
+    margin: 0px auto;
+    border-spacing: 0 10px;
+
+    tr {
+      th {
+        text-align: center;
+        padding: 5px;
+        user-select: none;
+      }
+
+      &.weekDays, &.days {
+        th {
+          width: 20px;
+          min-height: 20px;
+          padding-bottom: 7px;
+        }
+      }
+
+      &.years, &.months {
+        th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+      }
+
+      &:not(.weekDays) {
+        th {
+          font-weight: normal;
+          cursor: pointer;
+          border-radius: @border-radius-base;
+
+          &.not-in-month {
+            color: @gray-lighter;
+          }
+
+          &.is-today:not(.not-in-month):not(.active) {
+            background-color: @brand-warning;
+          }
+
+          &.active {
+            background-color: @brand-primary;
+          }
+
+          &.disabled {
+            background-color: @gray-lighter;
+          }
+
+          &:hover:not(.disabled):not(.is-today):not(.active) {
+            color: @gray-base;
+            background-color: @gray-lighter;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import (optional) "@{component-override-path}date-picker.less";

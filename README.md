@@ -118,6 +118,52 @@ const Dialog = function(){
 document.body.appendChild(Dialog())
 ```
 
+how about a date picker:
+
+```js
+const yo = require("yo-yo")
+const Common = require("yoyo-bootstrap/common")
+const InputGroup = require("yoyo-bootstrap/input-group")
+const FormControl = require("yoyo-bootstrap/form-control")
+const DatePicker = require("yoyo-bootstrap/date-picker")
+const connect = require("throw-down/connect")
+const update = require("throw-down/update")(yo.update)
+
+const DateField = function () {
+  var id, open = false, selected = new Date();
+
+  function init (_id) {
+    id = _id
+  }
+
+  function blur () {
+    open = false
+    update(id, render())
+  }
+
+  function focus () {
+    open = true
+    update(id, render())
+  }
+
+  function change (dateObj) {
+    selected = dateObj
+    blur()
+  }
+
+  function render () {
+    return InputGroup({className: 'dropdown ' + (open && 'open' || '')},
+      FormControl({onFocus:focus, onBlur: blur, value: String(selected), placeholder: "Pick a date.."}),
+      DatePicker({defaultViewDate: selected, onChange: change})
+    )
+  }
+
+  return connect(render, init)
+}
+
+document.body.appendChild(DateField())
+```
+
 Notice, all component properties are notated the same as React Bootstrap. Use the React Bootstrap manual to walk through the various available properties for each component.
 
 Manual available here: https://react-bootstrap.github.io/components.html
@@ -175,6 +221,7 @@ const Nav = require("yoyo-bootstrap/nav")
 const Breadcrumb = require("yoyo-bootstrap/breadcrumb")
 const Modal = require("yoyo-bootstrap/modal")
 const Pagination = require("yoyo-bootstrap/pagination")
+const DatePicker = require("yoyo-bootstrap/date-picker")
 ```
 
 ## Customizing LESS/Bootstrap
@@ -219,6 +266,36 @@ I would recommend using the overrides over completely setting new paths. This wa
 `yoyo-boostrap` uses the same conventions as the React Bootstrap package. Use their manual for property coverage on Bootstrap components. This way I don't need to write documentation =D
 
 Here: https://react-bootstrap.github.io/components.html
+
+## DatePicker
+
+`yoyo-bootstrap` comes with its own date picker which merges the jQuery Bootstrap `DatePicker` options and the React Bootstrap date picker options. Because of this, I'll provide the `DatePicker` options below:
+
+```js
+{
+  i18n: {
+    months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+    monthsShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    days: ['Su','Mo','Tu','We','Th','Fr','Sa']
+  },
+
+  onChange: function (dateObject) {}, // fired when a date has been selected
+
+  showToday: true, // highlight the current date
+
+  autoClose: true, // allows onFinished to be fired when the date is selected
+
+  viewMode: 'days', // days, months, years
+
+  datesDisabled: [new Date("08/12/2013")], // dates are disabled
+
+  daysOfWeekDisabled: [0, 2, 4], // <= this will disable Sunday, Tuesday, Thursday
+
+  defaultViewDate: new Date() // the default selected date
+}
+```
+
+Note, the `DatePicker` uses and handles like a Bootstrap drop down button/menu. So use it in an `InputGroup`. See the example above. Treat it like a drop down menu in your code.
 
 ## dom101 - for basic DOM tooling
 

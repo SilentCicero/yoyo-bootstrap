@@ -43,6 +43,7 @@ const Breadcrumb = require("./breadcrumb")
 const Nav = require("./nav")
 const NavItem = require("./nav-item")
 const Navbar = require("./navbar")
+const DatePicker = require("./date-picker")
 
 module.exports = {
   "Alert": Alert,
@@ -89,5 +90,6 @@ module.exports = {
   "Nav": Nav,
   "NavItem": NavItem,
   "Navbar": Navbar,
-  "Option": Option
+  "Option": Option,
+  "DatePicker": DatePicker
 }

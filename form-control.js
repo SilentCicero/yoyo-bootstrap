@@ -17,14 +17,17 @@ const FormControl = function(props) {
           ${Children(arguments)}
         </select>`
   } else if(componentClass === "textarea") {
-    el = yo`<textarea id="${id}" class="${className}" placeholder="${placeholder}">`
+    el = yo`<textarea id="${id}" class="${className}" placeholder="${placeholder}">${props.value || ""}</textarea>`
   } else {
-    el = yo`<input id="${id}" type="${type}" class="${className}" placeholder="${placeholder}" />`
+    el = yo`<input id="${id}" type="${type}" class="${className}" value=${props.value || ""} placeholder="${placeholder}" />`
   }
 
   if(props.disabled) el.setAttribute("disabled", true)
-
   if(props.multiple) el.setAttribute("multiple", true)
+  if(props.onBlur) el.addEventListener("blur", props.onBlur)
+  if(props.onFocus) el.addEventListener("focus", props.onFocus)
+  if(props.onClick) el.addEventListener("click", props.onClick)
+  if(props.onChange) el.addEventListener("change", props.onChange)
 
   return yo`<span> ${label} ${el} </span>`
 }
