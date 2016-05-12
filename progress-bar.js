@@ -1,14 +1,14 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/progress-bars.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/progress-bars.less')
 
-const ProgressBar = function(props) {
+const ProgressBar = function (props) {
   props = props || {}
 
-  const className = (props.bsClass && props.bsClass + " " || 'progress-bar ')
-               + (props.active && "active" + " " || ' ')
-               + (props.striped && "progress-bar-striped" + " " || ' ')
-               + (props.bsStyle && "progress-bar-" + props.bsStyle + " " || ' ');
+  const className = (props.bsClass && props.bsClass + ' ' || 'progress-bar ') +
+                    (props.active && 'active' + ' ' || ' ') +
+                    (props.striped && 'progress-bar-striped' + ' ' || ' ') +
+                    (props.bsStyle && 'progress-bar-' + props.bsStyle + ' ' || ' ')
 
   return yo`
     <div class="progress">

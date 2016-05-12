@@ -1,15 +1,15 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/tables.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/tables.less')
 
-const Table = function(props) {
+const Table = function (props) {
   props = props || {}
 
-  var elClass = (props.bsClass && props.bsClass + " " || 'table ')
-              + (props.striped && "table-striped " || '')
-              + (props.bordered && "table-bordered " || '')
-              + (props.condensed && "table-condensed " || '')
-              + (props.hover && "table-hover " || '');
+  var elClass = (props.bsClass && props.bsClass + ' ' || 'table ') +
+                (props.striped && 'table-striped ' || '') +
+                (props.bordered && 'table-bordered ' || '') +
+                (props.condensed && 'table-condensed ' || '') +
+                (props.hover && 'table-hover ' || '')
 
   return yo`
     <table class="${elClass}">

@@ -1,3 +1,3 @@
-const Normalize = require("./less/normalize.less")
+const Normalize = require('./less/normalize.less')
 
 module.exports = Normalize

@@ -1,17 +1,17 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/thumbnails.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/thumbnails.less')
 
-const Thumbnail = function(props) {
+const Thumbnail = function (props) {
   props = props || {}
 
-  var src = (props.src && props.src + " " || ' '),
-      alt = (props.alt && props.alt + " " || ' '),
-      className = (props.bsClass && props.bsClass + " " || 'thumbnail '),
-      href = (props.href && props.href + " " || ' ');
+  var src = (props.src && props.src + ' ' || ' ')
+  var alt = (props.alt && props.alt + ' ' || ' ')
+  var className = (props.bsClass && props.bsClass + ' ' || 'thumbnail ')
+  var href = (props.href && props.href + ' ' || ' ')
 
   return props.href && yo `
-    <a src="${src}" class="${className}" role="button">
+    <a href="${href}" class="${className}" role="button">
       <img src="${src}" alt="${alt}" />
     </a>
     ` || yo `

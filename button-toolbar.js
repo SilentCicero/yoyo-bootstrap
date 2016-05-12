@@ -1,8 +1,8 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/button-groups.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/button-groups.less')
 
-const ButtonToolbar = function(props) {
+const ButtonToolbar = function (props) {
   props = props || {}
 
   return yo`

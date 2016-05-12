@@ -1,3 +1,3 @@
-const Print = require("./less/print.less")
+const Print = require('./less/print.less')
 
 module.exports = Print

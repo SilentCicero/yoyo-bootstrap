@@ -1,5 +1,7 @@
 # yoyo-bootstrap
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 Bootstrap components for the actual DOM (built with yo-yo)
 
 ```

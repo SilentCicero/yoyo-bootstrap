@@ -1,12 +1,12 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/forms.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/forms.less')
 
-const ControlLabel = function(props) {
+const ControlLabel = function (props) {
   props = props || {}
 
   return yo`
-    <label class="${(props.bsClass && props.bsClass + " " || 'control-label ')}">
+    <label class="${(props.bsClass && props.bsClass + ' ' || 'control-label ')}">
       ${Children(arguments)}
     </label>
     `

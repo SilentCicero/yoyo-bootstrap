@@ -1,13 +1,13 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-const connect = require("throw-down/connect")
-const update = require("throw-down/update")(yo.update)
-const walk = require("./walk")
-require("./less/component-animations.less")
-require("./less/modals.less")
-require("./less/close.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+const connect = require('throw-down/connect')
+const update = require('throw-down/update')(yo.update)
+const walk = require('./walk')
+require('./less/component-animations.less')
+require('./less/modals.less')
+require('./less/close.less')
 
-const Modal = function(props) {
+const Modal = function (props) {
   props = props || {}
   props.onEnter = props.onEnter && props.onEnter || function () {}
   props.onEntering = props.onEntering && props.onEntering || function () {}
@@ -17,35 +17,35 @@ const Modal = function(props) {
   props.onExited = props.onExited && props.onExited || function () {}
   props.onHide = props.onHide && props.onHide || function () {}
 
-  var className = (props.bsClass && props.bsClass + " " || 'modal ')
-                + (props.dialogClassName && props.dialogClassName + " " || ""),
-      fadeClass = (props.show && 'fade ' || 'fade '),
-                args = arguments, id
+  var className = (props.bsClass && props.bsClass + ' ' || 'modal ') +
+                  (props.dialogClassName && props.dialogClassName + ' ' || ''),
+    fadeClass = (props.show && 'fade ' || 'fade '),
+    args = arguments, id
 
   function init (_id) {
     id = _id
-    if(props.show) props.onEnter()
-    if(!props.show) props.onExit()
+    if (props.show) props.onEnter()
+    if (!props.show) props.onExit()
   }
 
   function onload (node) {
-    if(props.show) props.onEntering()
-    if(!props.show) props.onExiting()
+    if (props.show) props.onEntering()
+    if (!props.show) props.onExiting()
 
     walk(node, function (node) {
-      if(!node.classList) return
-      if(!node.classList.contains("close")) return
-      node.addEventListener("click", props.onHide)
+      if (!node.classList) return
+      if (!node.classList.contains('close')) return
+      node.addEventListener('click', props.onHide)
     })
 
     setTimeout(function () {
-      if(props.show) {
+      if (props.show) {
         props.onEntered()
-        fadeClass += " in "
+        fadeClass += ' in '
         update(id, render())
       }
 
-      if(!props.show) {
+      if (!props.show) {
         props.onExited()
         update(id, yo`<div></div>`)
       }
@@ -53,7 +53,7 @@ const Modal = function(props) {
   }
 
   function blurHide (e) {
-    if(e.target.classList && !e.target.classList.contains("modal")) return
+    if (e.target.classList && !e.target.classList.contains('modal')) return
     props.onHide()
   }
 
@@ -68,15 +68,15 @@ const Modal = function(props) {
       `
   }
 
-  return connect(render, init, onload);
+  return connect(render, init, onload)
 }
 
-Modal.Dialog = function(props) {
+Modal.Dialog = function (props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass + " " || 'modal-dialog ')
-                + (props.bsSize && "modal-" + props.bsSize + ' ' || ' ')}">
+    <div class="${(props.bsClass && props.bsClass + ' ' || 'modal-dialog ') +
+                  (props.bsSize && 'modal-' + props.bsSize + ' ' || ' ')}">
       <div class="modal-content">
         ${Children(arguments)}
       </div>
@@ -84,7 +84,7 @@ Modal.Dialog = function(props) {
     `
 }
 
-Modal.Close = function(props) {
+Modal.Close = function (props) {
   props = props || {}
   props.onHide = props.onHide && props.onHide || function () {}
 
@@ -95,33 +95,33 @@ Modal.Close = function(props) {
   `
 }
 
-Modal.Header = function(props) {
+Modal.Header = function (props) {
   props = props || {}
   props.closeButton = props.closeButton && props.closeButton || true
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass + " " || 'modal-header ')}">
+    <div class="${(props.bsClass && props.bsClass + ' ' || 'modal-header ')}">
       ${Children(arguments)}
       ${props.closeButton && Modal.Close({onHide: props.onHide}) || ''}
     </div>
     `
 }
 
-Modal.Body = function(props) {
+Modal.Body = function (props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass + " " || 'modal-body ')}">
+    <div class="${(props.bsClass && props.bsClass + ' ' || 'modal-body ')}">
       ${Children(arguments)}
     </div>
     `
 }
 
-Modal.Footer = function(props) {
+Modal.Footer = function (props) {
   props = props || {}
 
   return yo`
-    <div class="${(props.bsClass && props.bsClass + " " || 'modal-footer ')}">
+    <div class="${(props.bsClass && props.bsClass + ' ' || 'modal-footer ')}">
       ${Children(arguments)}
     </div>
     `

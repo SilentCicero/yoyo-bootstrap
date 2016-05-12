@@ -11,8 +11,8 @@ const PanelGroup = function(props) {
   var defaultExpanded = (props.defaultExpanded && props.defaultExpanded || false);
 
   return yo`
-    <div id=${id} onclick=${onSelect} role="tablist" class="${(props.bsClass && props.bsClass + " " || 'panel-group ')
-                               + (props.className && props.className + " " || ' ')}">
+    <div id=${id} onclick=${onSelect} role="tablist" class="${(props.bsClass && props.bsClass + " " || 'panel-group ') +
+                                                              (props.className && props.className + " " || ' ')}">
       ${Children(arguments)}
     </div>
     `

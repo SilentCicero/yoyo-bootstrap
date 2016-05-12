@@ -1,8 +1,8 @@
-const yo = require("yo-yo")
-const Children = require("./children")
-require("./less/type.less")
+const yo = require('yo-yo')
+const Children = require('./children')
+require('./less/type.less')
 
-const PageHeader = function(props) {
+const PageHeader = function (props) {
   props = props || {}
 
   return yo`
