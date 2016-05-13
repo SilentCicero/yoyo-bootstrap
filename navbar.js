@@ -39,4 +39,14 @@ Navbar.Brand = function (props) {
     `
 }
 
+Navbar.Collapse = function (props) {
+  props = props || {}
+
+  return yo`
+    <div class="${(props.bsClass && props.bsClass + ' ' || 'navbar-collapse collapse ')}">
+      ${Children(arguments)}
+    </div>
+    `
+}
+
 module.exports = Navbar
