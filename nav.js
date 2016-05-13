@@ -9,12 +9,12 @@ const Nav = function (props) {
   props = props || {}
   var el
   el = yo`
-    <ul onclick=${props.onSelect} class="${(props.bsClass && props.bsClass + ' ' || 'nav ') +
+    <ul onclick=${props.onSelect} class="${(props.bsClass && props.bsClass + ' ' || 'nav navbar-nav ') +
     (props.bsStyle && 'nav-' + props.bsStyle + ' ' || ' ') +
     (props.stacked && 'nav-stacked ' || ' ') +
     (props.justified && 'nav-justified ' || ' ') +
-    (props.pullRight && 'pull-right ' || ' ') +
-    (props.pullLeft && 'pull-left ' || ' ')}">
+    (props.pullRight && 'navbar-right ' || ' ') +
+    (props.pullLeft && 'navbar-left ' || ' ')}">
       ${Children(arguments)}
     </ul>
     `
