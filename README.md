@@ -20,6 +20,7 @@ npm install --save yoyo-boostrap
  - Built with <a href="https://github.com/maxogden/yo-yo">yo-yo</a>, the lightest UI framework
  - Minimal dependencies (average `4.1kb` minified + g-zipped, usually just `yo-yo`)
  - Uses Bootstrap `3.3.6-stable` LESS
+ - Includes [node-lessify](https://www.npmjs.com/package/node-lessify) for [browserify](https://www.npmjs.com/package/browserify) bundling
  - ES6 import compatible (i.e. `import Alert, Button from 'yoyo-bootstrap'`)
 
 ## About
